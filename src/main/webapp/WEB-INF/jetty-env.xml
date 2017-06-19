@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN"
+"http://jetty.mortbay.org/configure.dtd">
+<Configure class="org.eclipse.jetty.webapp.WebAppContext">
+    <!-- org.mortbay.jetty.plus.naming.Resource -->
+    <!-- org.eclipse.jetty.plus.jndi.Resource -->
+    <New id="demo" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>jdbc/demo</Arg>
+        <Arg>
+        	<!-- com.mysql.jdbc.jdbc2.optional.MysqlDataSource -->
+        	<!-- com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource -->
+            <New class="com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource">
+                <Set name="url">jdbc:mysql://192.168.1.190:3306/tbsadb?characterEncoding=GBK&amp;autoReconnect=true</Set>
+                <Set name="user">root</Set>
+                <Set name="Password">excalibur</Set>
+            </New>
+        </Arg>
+    </New>
+</Configure>

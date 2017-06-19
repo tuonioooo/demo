@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
+<Configure class="org.mortbay.jetty.webapp.WebAppContext">
+	<!-- MsSqlServer DataSource -->
+	<New id="sample" class="org.mortbay.jetty.plus.naming.Resource">
+		<Arg>jdbc/sample</Arg>
+		<Arg>
+			<New class="org.springframework.jndi.JndiObjectFactoryBean">
+				<Set name="driverClassName">com.mysql.jdbc.Driver</Set>
+				<Set name="url">jdbc:mysql://192.168.1.190:3306/tbsadb</Set>
+				<Set name="username">root</Set>
+				<Set name="password">excalibur</Set>
+			</New>
+		</Arg>
+	</New>
+</Configure>

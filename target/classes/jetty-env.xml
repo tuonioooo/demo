@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN"
+"http://jetty.mortbay.org/configure.dtd">
+<Configure class="org.mortbay.jetty.webapp.WebAppContext">
+    <New id="dataSource" class="org.mortbay.jetty.plus.naming.Resource">
+        <Arg>jdbc/demo</Arg>
+        <Arg>
+            <New class="com.mysql.jdbc.jdbc2.optional.MysqlDataSource">
+                <Set name="driverClass">com.mysql.jdbc.Driver</Set>
+                <Set name="url">jdbc:mysql://192.168.1.190:3306/tbsadb?useUnicode=true&characterEncoding=UTF-8</Set>
+                <Set name="user">root</Set>
+                <Set name="Password">excalibur</Set>
+            </New>
+        </Arg>
+    </New>
+</Configure>
